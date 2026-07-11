@@ -13,7 +13,6 @@ export default function Pricing() {
 
 			<section id="content">
 				<div className="container">	 
-
 					<div className="row"> 
 
 						<div className="col-lg-3">
