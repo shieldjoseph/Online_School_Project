@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-
+import ImageElement from './portfolio/ImageElement.jsx'
 import work1 from '../assets/img/works/1.jpg'
 import work2 from '../assets/img/works/2.jpg'
 import work3 from '../assets/img/works/3.jpg'
@@ -10,7 +10,18 @@ import work7 from '../assets/img/works/7.jpg'
 import work8 from '../assets/img/works/8.jpg'
 
 export default function Portfolio() {
-	useEffect(() => {
+	const items = [
+		{ id: 1, type: 'web', image: work1 },
+		{ id: 2, type: 'icon', image: work2 },
+		{ id: 3, type: 'graphic', image: work3 },
+		{ id: 4, type: 'web', image: work4 },
+		{ id: 5, type: 'web', image: work5 },
+		{ id: 6, type: 'icon', image: work6 },
+		{ id: 7, type: 'web', image: work7 },
+		{ id: 8, type: 'graphic', image: work8 },
+	];
+
+	useEffect(( ) => {
 		// initialize jQuery quicksand filtering for SPA route
 		const $ = window.jQuery || window.$;
 		if (!$) return;
@@ -86,70 +97,9 @@ return (
 						<div className="row">
 							<section id="projects">
 								<ul id="thumbs" className="portfolio">
-
-									<li className="item-thumbs col-lg-3 design" data-id="id-0" data-type="web">
-										<a className="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href={work1}>
-										<span className="overlay-img"></span>
-										<span className="overlay-img-thumb"><i className="icon-info-blocks fa fa-code"></i></span>
-										</a>
-										<img src={work1} alt="" />
-									</li>
-
-									<li className="item-thumbs col-lg-3 design" data-id="id-1" data-type="icon">
-										<a className="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href={work2}>
-										<span className="overlay-img"></span>
-										<span className="overlay-img-thumb"><i className="icon-info-blocks fa fa-code"></i></span>
-										</a>
-										<img src={work2} alt="" />
-									</li>
-
-									<li className="item-thumbs col-lg-3 photography" data-id="id-2" data-type="graphic">
-										<a className="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href={work3}>
-										<span className="overlay-img"></span>
-										<span className="overlay-img-thumb"><i className="icon-info-blocks fa fa-code"></i></span>
-										</a>
-										<img src={work3} alt="" />
-									</li>
-
-									<li className="item-thumbs col-lg-3 design" data-id="id-0" data-type="web">
-										<a className="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href={work4}>
-										<span className="overlay-img"></span>
-										<span className="overlay-img-thumb"><i className="icon-info-blocks fa fa-code"></i></span>
-										</a>
-										<img src={work4} alt="" />
-									</li>
-
-									<li className="item-thumbs col-lg-3 photography" data-id="id-4" data-type="web">
-										<a className="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href={work5}>
-										<span className="overlay-img"></span>
-										<span className="overlay-img-thumb"><i className="icon-info-blocks fa fa-code"></i></span>
-										</a>
-										<img src={work5} alt="" />
-									</li>
-
-									<li className="item-thumbs col-lg-3 photography" data-id="id-5" data-type="icon">
-										<a className="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href={work6}>
-										<span className="overlay-img"></span>
-										<span className="overlay-img-thumb"><i className="icon-info-blocks fa fa-code"></i></span>
-										</a>
-										<img src={work6} alt="" />
-									</li>
-
-									<li className="item-thumbs col-lg-3 design" data-id="id-0" data-type="web">
-										<a className="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href={work7}>
-										<span className="overlay-img"></span>
-										<span className="overlay-img-thumb"><i className="icon-info-blocks fa fa-code"></i></span>
-										</a>
-										<img src={work7} alt="" />
-									</li>
-
-									<li className="item-thumbs col-lg-3 design" data-id="id-0" data-type="graphic">
-										<a className="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href={work8}>
-										<span className="overlay-img"></span>
-										<span className="overlay-img-thumb"><i className="icon-info-blocks fa fa-code"></i></span>
-										</a>
-										<img src={work8} alt="" />
-									</li>
+									{items.map((item) => (
+										<ImageElement key={item.id} image={item.image} type={item.type} id={item.id} />
+									))}
 								</ul>
 							</section>
 							
@@ -159,5 +109,5 @@ return (
 			</div>
 		</section>
 	</>
-  )
+  	)
 }

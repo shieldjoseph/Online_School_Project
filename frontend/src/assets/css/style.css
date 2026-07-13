@@ -748,16 +748,12 @@ form#commentform textarea {
 }
 
 /* Ensure 4 portfolio items per row and consistent sizing */
-#thumbs li.item-thumbs {
-	width: 25%;
-	float: left;
-	box-sizing: border-box;
-	padding: 0 10px; /* optional gap between items */
-}
+
 
 .item-thumbs img {
 	width: 100%;
-	height: auto;
+	height: 180px;      /* pick any fixed height */
+	object-fit: cover;
 	display: block;
 }
 
@@ -1778,4 +1774,18 @@ padding:50px 0
     margin: 0;
     padding: 22px 0 14px;
     font-size: 18px;
+}
+
+/* 4 columns on md/lg */
+@media (min-width: 992px) {
+	ul.portfolio > .item-thumbs:nth-child(4n + 1) {
+	  clear: left;
+	}
+}
+  
+  /* 2 columns on sm (col-sm-6) */
+@media (min-width: 768px) and (max-width: 991px) {
+	ul.portfolio > .item-thumbs:nth-child(2n + 1) {
+	  clear: left;
+	}
 }

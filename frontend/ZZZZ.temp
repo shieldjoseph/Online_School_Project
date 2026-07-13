@@ -1,0 +1,53 @@
+//// OurTeam.jsx
+
+import { useEffect, useState } from 'react'
+import TeamMember from './TeamMember.jsx'
+
+const OurTeam = () => {
+
+    const [team, setTeam] = useState([]);
+
+    useEffect(() => {
+
+        fetch("/api/team")
+            .then(res => res.json())
+            .then(data => setTeam(data));
+
+    }, []);
+
+    return (
+        <div className="row">
+
+            {team.map(member => (
+                <TeamMember
+                    key={member.id}
+                    member={member}
+                />
+            ))}
+
+        </div>
+    )
+}
+
+export default OurTeam
+
+//// TeamMember.jsx
+
+import React from 'react'
+
+const TeamMember = ({ member }) => {
+
+    return (
+        <>
+            <div className="team-member">
+                <img className="img-responsive" src={member.image} alt={member.name} />
+                <h4>{member.name}</h4>
+                <span className="deg">{member.role}</span>
+            </div>
+        </>
+    )
+}
+
+export default TeamMember
+
+

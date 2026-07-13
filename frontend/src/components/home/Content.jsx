@@ -5,19 +5,19 @@ const Content = () => {
     const content = [
         {
             title: 'Web Development',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident.'
+            description: 'Web Development is a process that creates websites and web applications.'
         },
         {
             title: 'UI Design',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident.'
+            description: 'UI Design is a process that creates user interfaces for websites and web applications.'
         },
         {
             title: 'Interaction',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident.'
+            description: 'Interaction is a process that allows users to interact with a website or web application.'
         },
         {
             title: 'User Experience',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident.'
+            description: 'User Experience is an experience that users have when using a website or web application.'
         }
     ]
 	

@@ -1,23 +1,32 @@
-import React from 'react';
+import React from 'react'
+import ExperitseElement from './ExperitseElement.jsx'
 
 const OurExpertise = () => {
 
     const expertise = [ 
         {
+            id: 1,
             name: 'Web Development',
-            percentage: 90
+            percentage: 90,
+			color: 'red'
         },
         {
+            id: 2,
             name: 'Designing',
-            percentage: 80
+            percentage: 80,
+			color: 'green'
         },
         {
+            id: 3,
             name: 'User Experience',
-            percentage: 95
+            percentage: 95,
+			color: 'lblue'
         },
         {
+            id: 4,
             name: 'Marketing',
-            percentage: 70
+            percentage: 70,
+			color: 'yellow'
         }
     ]
 
@@ -29,58 +38,9 @@ const OurExpertise = () => {
 		    			<span>Our Expertise</span>
 		    		</h3>
 		    	</div>
-		    	<h6>{expertise[0].name}</h6>
-		    	<div className="progress pb-sm">
-		    		<div
-		    			className="progress-bar progress-bar-red"
-		    			role="progressbar"
-		    			aria-valuenow={expertise[0].percentage}
-		    			aria-valuemin="0"
-		    			aria-valuemax="100"
-		    			style={{ width: `${expertise[0].percentage}%` }}
-		    		>
-		    			<span className="sr-only">{expertise[0].percentage}%</span>
-		    		</div>
-		    	</div>
-		    	<h6>{expertise[1].name}</h6>
-		    	<div className="progress pb-sm">
-		    		<div
-		    			className="progress-bar progress-bar-green"
-		    			role="progressbar"
-		    			aria-valuenow={expertise[1].percentage}
-		    			aria-valuemin="0"
-		    			aria-valuemax="100"
-		    			style={{ width: `${expertise[1].percentage}%` }}
-		    		>
-		    			<span className="sr-only">{expertise[1].percentage}%</span>
-		    		</div>
-		    	</div>
-		    	<h6>{expertise[2].name}</h6>
-		    	<div className="progress pb-sm">
-		    		<div
-		    			className="progress-bar progress-bar-lblue"
-		    			role="progressbar"
-		    			aria-valuenow={expertise[2].percentage}
-		    			aria-valuemin="0"
-		    			aria-valuemax="100"
-		    			style={{ width: `${expertise[2].percentage}%` }}
-		    		>
-		    			<span className="sr-only">{expertise[2].percentage}%</span>
-		    		</div>
-		    	</div>
-		    	<h6>{expertise[3].name}</h6>
-		    	<div className="progress pb-sm">
-		    		<div
-		    			className="progress-bar progress-bar-yellow"
-		    			role="progressbar"
-		    			aria-valuenow={expertise[3].percentage}
-		    			aria-valuemin="0"
-		    			aria-valuemax="100"
-		    			style={{ width: `${expertise[3].percentage}%` }}
-		    		>
-		    			<span className="sr-only">{expertise[3].percentage}%</span>
-		    		</div>
-		    	</div>
+				{expertise.map(expertise => (	
+					<ExperitseElement key={expertise.id} expertise={expertise} />
+				))}
 		    </div>
         </>
 	)

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/img/logo.png";
 
 const navItems = [
@@ -12,7 +12,10 @@ const navItems = [
 ];
 
 export default function Header() {
-  return (
+	const location = useLocation();
+	const pathname = location.pathname;
+	const isActive = (path) => pathname === path;
+	return (
     <>
         <header>
 
@@ -38,7 +41,7 @@ export default function Header() {
 					<div className="navbar-collapse collapse">
 						<ul className="nav navbar-nav">
 							{navItems.map((item, index) => (
-								<li key={index} className={item.path == "/" ? "active" : ""}>
+								<li key={index} className={isActive(item.path) ? "active" : ""}>
 									<Link to={item.path}>{item.label}</Link>
 								</li>
 							))}

@@ -3,7 +3,7 @@ import Feature from './home/Feature.jsx'
 import CallAction from './home/CallAction.jsx'
 import Content from './home/Content.jsx'
 import TestimonialArea from './home/TestimonialArea.jsx'
-import Courses from './home/Courses.jsx'
+import OurCourses from './home/OurCourses.jsx'
 
 function Home() {
 	useEffect(() => {
@@ -24,7 +24,7 @@ function Home() {
 
 			<TestimonialArea />
 
-			<Courses />
+			<OurCourses />
 			
 		</div>
 	)

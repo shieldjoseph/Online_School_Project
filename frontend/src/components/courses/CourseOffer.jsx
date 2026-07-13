@@ -2,9 +2,44 @@ import React from 'react'
 import CourseContent from '../CourseContent.jsx'
 
 const CourseOffer = () => {
-    return (
-        <>
-            <section className="course">
+
+	const courseList = [
+		{
+			id: 1,
+			name: 'React',
+			description: 'React is a JavaScript library for building user interfaces.'
+		},
+		{
+			id: 2,
+			name: 'Node.js',
+			description: 'Node.js is a JavaScript runtime built on Chrome\'s V8 JavaScript engine.'
+		},
+		{
+			id: 3,
+			name: 'MongoDB',
+			description: 'MongoDB is a NoSQL database that uses JSON-like documents with schemas.'
+		},
+		{
+			id: 4,
+			name: 'Express',
+			description: 'Express is a web application framework for Node.js.'
+		},
+		{
+			id: 5,
+			name: 'PostgreSQL',
+			description: 'PostgreSQL is a powerful, open source object-relational database system.'
+		},
+		{
+			id: 6,
+			name: 'MySQL',
+			description: 'MySQL is a relational database management system.'
+		}
+	];
+
+	return (
+		<>
+			<section className="course">
+				
 				<div className="row">
 					<div className="col-lg-12">
 						<div className="">
@@ -14,12 +49,21 @@ const CourseOffer = () => {
 						</div>
 					</div>
 				</div>
-				
-				<CourseContent />
+
+				<div className="row">
+					{courseList.slice(0, 3).map(course => (
+						<CourseContent key={course.id} course={course} />
+					))}
+				</div>
+				<div className="row">
+					{courseList.slice(3, 6).map(course => (
+						<CourseContent key={course.id} course={course} />
+					))}
+				</div>
 
 			</section>
-        </>
-    )
+		</>
+	)
 }
 
 export default CourseOffer
