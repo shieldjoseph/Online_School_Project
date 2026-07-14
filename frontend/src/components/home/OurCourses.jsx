@@ -1,5 +1,8 @@
 import React from 'react'
 import CourseContent from '../CourseContent.jsx'
+import { useEffect, useState } from 'react';
+import { getCourses } from '../../api/courses.js';
+
 
 const OurCourses = () => {
 
@@ -35,6 +38,19 @@ const OurCourses = () => {
 			description: 'MySQL is a relational database management system.'
 		}
 	];
+	
+	const [courses, setCourses] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
+
+	useEffect(() => {
+		getCourses()
+		.then(data => setCourses(data))
+		.catch(() => setError("Failed to load courses"))
+		.finally(() => setLoading(false));
+	}, [])
+	if (loading) return <p>Loading...</p>
+	if (error) return <p>{error}</p>
 
 	return (
 		<>
