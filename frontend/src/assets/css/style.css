@@ -421,7 +421,18 @@ display: none;}
 margin: 20px 0;
 }
 .carousel-indicators {
-bottom: -30px;
+	bottom: -30px;
+	left: 50%;
+	right: auto;
+	width: auto;
+	margin: 0;
+	padding: 0;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px; /* same interval for all */
+	list-style: none;
 }
 .team-member {
     text-align: center;
@@ -1763,9 +1774,40 @@ padding-top: 2px;
 padding:50px 0
 }
 .carousel-indicators li {
-    display: inline-block; 
-    border: 1px solid #929292;
-	}
+	flex: 0 0 auto;
+	width: 12px;
+	height: 12px;
+	margin: 0; /* override Bootstrap uneven margins */
+	padding: 0;
+	border: 1px solid #929292;
+	border-radius: 50%;
+	background: transparent;
+	cursor: pointer;
+	text-indent: -9999px;
+}
+.carousel-indicators .active {
+	width: 12px;   /* same as inactive */
+	height: 12px;
+	margin: 0;
+	background: hwb(0 100% 0%);
+}
+.testimonial-viewport {
+	overflow: hidden;   /* show one full slide; during move you see both edges like the image */
+	position: relative;
+	width: 100%;
+}
+.testimonial-track {
+	display: flex;
+	transition: transform 0.6s ease; /* horizontal flow animation */
+	will-change: transform;
+}
+.testimonial-slide {
+	flex: 0 0 100%;     /* each quote takes full width */
+	width: 100%;
+	float: none;        /* override Bootstrap .item float if needed */
+	display: block;
+}
+
 .textbox {
     background-color: #EFEFEF;
     padding: 4px 25px;
