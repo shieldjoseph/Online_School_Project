@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import CourseContent from '../CourseContent.jsx'
 import { getCourses } from '../../api/courses.js'
 

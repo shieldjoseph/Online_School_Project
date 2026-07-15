@@ -63,7 +63,7 @@ export default function Portfolio() {
 		$('.filter li').off('click', clickHandler).on('click', clickHandler);
 
 		return () => {
-			try { $('.filter li').off('click', clickHandler); } catch (e) {}
+			try { $('.filter li').off('click', clickHandler); } catch { /* jQuery may already be gone */ }
 		};
 	}, []);
 

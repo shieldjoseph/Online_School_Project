@@ -67,4 +67,4 @@ const TestimonialArea = () => {
 	)	
 }
 
-export default TestimonialArea;
+export default TestimonialArea
