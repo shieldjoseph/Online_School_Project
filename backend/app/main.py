@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.database import Base, engine
-from app.routers import courses
+from app.routers import courses, content
 
 Base.metadata.create_all(bind=engine)  # or use migrations later
 
@@ -19,3 +19,5 @@ app.add_middleware(
 )
 
 app.include_router(courses.router)
+
+app.include_router(content.router)

@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState, useEffect } from 'react'
 import CourseContent from '../CourseContent.jsx'
 import { getCourses } from '../../api/courses.js'
@@ -9,7 +10,7 @@ const OurCourses = () => {
 	const [courseList, setCourseList] = useState([]);
 	useEffect(() => {
 		getCourses().then(setCourseList).catch(console.error);
-	}, []);
+	}, [])
 
 	return (
 		<>

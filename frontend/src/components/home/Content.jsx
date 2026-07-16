@@ -1,34 +1,14 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 import ContentElement from './ContentElement.jsx'
+import { getContent } from "../../api/content.js";
 
 const Content = () => {
 
-    const contentList = [
-        {
-			id: 1,
-			icon: 'trophy',
-            title: 'Web Development',
-            description: 'Web Development is a process that creates websites and web applications.'
-        },
-        {
-			id: 2,
-			icon: 'picture-o',
-            title: 'UI Design',
-            description: 'UI Design is a process that creates user interfaces for websites and web applications.'
-        },
-        {
-			id: 3,
-			icon: 'desktop',
-            title: 'Interaction',
-            description: 'Interaction is a process that allows users to interact with a website or web application.'
-        },
-        {
-			id: 4,
-			icon: 'globe',
-            title: 'User Experience',
-            description: 'User Experience is an experience that users have when using a website or web application.'
-        }
-    ]
+    const [contentList, setContentList] = useState([]);
+	useEffect(() => {
+		getContent().then(setContentList).catch(console.error);
+	}, [])
 	
     return (
         <>
